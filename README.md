@@ -11,3 +11,7 @@ To send automated birthday & anniversary emails given a contact list on Google S
 | ... | ... |... |... |... |... |... |... |
 | ... | ... |... |... |... |... |... |... |
 
+## Resources Used
+https://medium.com/geekculture/never-miss-your-customers-birthday-email-with-google-sheets-d64e75372341 
+
+https://blog.gsmart.in/google-apps-script-send-html-email/ 
