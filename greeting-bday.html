@@ -13,14 +13,14 @@
     <!-- wrapper; holds all content; makes sure there is min padding 20px-->
     <div id="wrapper" style="min-width: 300px; max-width: 600px; height: 100%; margin-left: auto; margin-right: auto;"> 
 
-        <div class="img-container" style="width: 100%;">
+        <div class="img-container" style="width: 100%; background-color: white;">
             <img src="cid:MLCM-logo" alt="Meadowvale Lighthouse Christian Ministries - Logo" style="width: 80%; max-width: 300px;">
         </div>
 
         <div id="banner" style="position:relative; width: 100%; height: 75vh; min-height: max-content;">
-            <div id="banner--blue" style="width: 100%; height: 70%; background-color: #3771C7;"></div>
-            <div class="img-container" style="position: absolute; bottom: 0; width: 100%; height: 30%;">
-                <img src="cid:bday-pic" alt="" style="position: absolute; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right: auto; max-height: 300%; ">
+            <div id="banner--blue" style="width: 100%; height: 66%; background-color: #3771C7;">
+                <!-- img height = 300%*50% = 1.5 times taller than blue -->
+                <img id="bday-pic" src="cid:bday-pic" alt="" style="max-height: 300%; margin-left: auto; margin-right: auto;">
             </div>
         </div>
         <h1 style="font-family: 'Montserrat', Arial, Helvetica, sans-serif; text-transform: uppercase; font-weight: bolder; letter-spacing: 0.2em; word-spacing: 0.2em;">
@@ -33,9 +33,9 @@
             </p>
         </div>
         <div class="img-container" style="max-width: 100%; min-height: max-content; margin: 4em 0;">
-            <img src="cid:MLCM-polaroid" alt="MLCM 2023.03.12 - 1" style="max-width: 90%; transform: rotate(5deg);">
+            <img id="mlcm-pic" src="cid:MLCM-polaroid" alt="MLCM 2023.03.12 - 1" style="max-width: 90%;">
         </div>
-        <div id="footer" style="padding: 0.5em; margin-top: 2em; background-color: #E6E6E6;">
+        <div id="footer" style="padding: 0.5em; margin-top: 3em; background-color: #E6E6E6;">
             <div>
                 <p>
                     Sent by <br>
