@@ -5,10 +5,9 @@ function sendBirthdayEmails() {
 
   // get images from Google Drive. Got File IDs from share links
   let imgs = {
-    "MLCM-logo": DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
-		"bday-pic":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+		"bday-banner":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
 		"MLCM-polaroid":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
-  };
+	};
 
 
 
@@ -53,8 +52,7 @@ function testHTML() {
 
   // get images from Google Drive. Got File IDs from share links
   let imgs = {
-		"MLCM-logo": DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
-		"bday-pic":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+		"bday-banner":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
 		"MLCM-polaroid":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
 	};
 
