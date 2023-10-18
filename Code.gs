@@ -45,6 +45,76 @@ function sendBirthdayEmails() {
 }
 
 
+
+
+
+function sendNewsletter(){
+  // use HTML file as template. Note: Apps Script ignores .html in file name
+  let htmlFile = HtmlService.createTemplateFromFile("newsletter2023.10.15");
+
+  // get images from Google Drive. Got File IDs from share links
+  let imgs = {
+    "newsletter-banner": DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "prayer-meeting":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "basketball":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "bday":  DriveApp.getFileById("<FILE_ID>").getAs("image/png")
+  };
+
+
+
+  // Get the sheet where the data is, in sheet 'CustomerDb'
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1")
+
+  // Get all emails, filtering out empty cells
+  const emails = sheet.getRange("G2:G").getValues().map(
+    function(el){ 
+      return el[0]; 
+    }).filter(
+      function(el){ 
+        return el != '' 
+      });
+
+  console.log("Sending to...");
+  console.log(emails.join(", "));
+
+
+  // Send to all emails
+  MailApp.sendEmail({
+    to: emails.join(","),
+    subject: "FIRST ZOOM PRAYER MEETING - THURS, OCT 19 @ 7PM",
+    htmlBody: htmlFile.evaluate().getContent(),
+    inlineImages: imgs
+  });
+}
+
+
+
+
+
+function testNewsletter(){
+    // use HTML file as template. Note: Apps Script ignores .html in file name
+  let htmlFile = HtmlService.createTemplateFromFile("newsletter2023.10.15");
+
+  // get images from Google Drive. Got File IDs from share links
+  let imgs = {
+    "newsletter-banner": DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "prayer-meeting":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "basketball":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+    "bday":  DriveApp.getFileById("<FILE_ID>").getAs("image/png"),
+  };
+
+  MailApp.sendEmail({
+    to: "<EMAIL_ADDRESS>",
+    subject: "FIRST ZOOM PRAYER MEETING - THURS, OCT 19 @ 7PM",
+    htmlBody: htmlFile.evaluate().getContent(),
+    inlineImages: imgs
+  });
+}
+
+
+
+
+
 function testHTML() {
   // use HTML file as template. Note: Apps Script ignores .html in file name
   let htmlFile = HtmlService.createTemplateFromFile("greeting-bday");
